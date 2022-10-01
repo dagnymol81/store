@@ -12,12 +12,6 @@ const store = [
   price: 350
 },
 {
-  name: 'Sword of the Wellerman',
-  quantity: 7,
-  description: 'A rapier that sings sea shanties',
-  price: 30000,
-},
-{
   name: 'Deck of a Few Things',
   quantity: 666,
   description: 'Pick a card, any card',
@@ -30,22 +24,10 @@ const store = [
   price: 999,
 },
 {
-  name: 'Sonic Screwdriver',
-  quantity: 13,
-  description: 'Bored? Have a long night? Lots of cabinets to put up?',
-  price: 1963,
-},
-{
   name: 'Head of Vecna',
   quantity: 1,
   description: 'Eh, you can figure it out',
   price: 666
-},
-{
-  name: 'The Stoppable Force',
-  quantity: 999,
-  description: 'Straight from the Outlands',
-  price: 5173,
 },
 {
   name: 'To Serve Man',
@@ -60,16 +42,10 @@ const store = [
   price: 99,
 },
 {
-  name: 'Torn and restored scrolls',
-  quantity: 7,
-  description: 'Amaze your friends',
-  price: 1938,
-},
-{
-  name: 'The beer hat',
-  quantity: 1,
-  description: 'Beer... from a hat',
-  price: 2061,
+  name: 'Book of Summoning',
+  quantity: 13,
+  description: 'For those who need a friend',
+  price: 666,
 }
 ]
 

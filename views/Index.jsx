@@ -1,4 +1,5 @@
 const React = require('react')
+const DefaultLayout = require('./layouts/DefaultLayout')
 class Index extends React.Component {
 
   render() {
@@ -6,19 +7,22 @@ class Index extends React.Component {
     const { store } = this.props
   
     return (
-      <div>
-        <h1>Index Page</h1>
-        <ul id="store-index">
+      <DefaultLayout> 
+        <h1>Merlin's Magic Shop</h1>
+        <section id="store-index">
           {store.map((item) => {
             return (
-              <li key={item._id}>
+              <div key={item._id} className="item-listing">
                 <a href={`/store/${item._id}`}>{item.name}</a>
-              </li>
+                <p>
+                  {item.description}
+                </p>
+              </div>
             )
           })}
-        </ul>
+        </section>
         <a href="/store/new">Add a new item</a>
-        </div>
+        </DefaultLayout>
     )
   }
 }
