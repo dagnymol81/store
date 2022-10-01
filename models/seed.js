@@ -2,50 +2,58 @@ const store = [
 {
   name: 'Pocket Sand',
   quantity: 100,
-  description: 'Get out of uncomfortable situations the Dale Gribble way',
+  description: 'Get out of uncomfortable situations the Rusty Shackleford way',
   price: 199,
+  image: 'sand.png',
 },
 {
   name: 'Ring of Invisibility',
   quantity: 20,
   description: 'Put it on your finger and the ring turns invisible',
-  price: 350
+  price: 350,
+  image: 'hand.png',
 },
 {
   name: 'Deck of a Few Things',
   quantity: 666,
-  description: 'Pick a card, any card',
-  price: 99
+  description: 'Pick a card, any card. No, not that one!',
+  price: 99,
+  image: 'deck.png',
 },
 {
   name: 'Eleven foot pole',
   quantity: 42,
   description: 'When you want to be really sure',
   price: 999,
+  image: 'pole.png',
 },
 {
   name: 'Head of Vecna',
   quantity: 1,
-  description: 'Eh, you can figure it out',
-  price: 666
+  description: "Let's see, the hand of Vecna required cutting off your hand...",
+  price: 666,
+  image: 'skull.png',
 },
 {
   name: 'To Serve Man',
   quantity: 1962,
   description: 'A cookbook',
-  price: 1962
+  price: 1962,
+  image: 'cookbook.png',
 },
 {
   name: 'Elven chain mail',
   quantity: 100,
   description: 'Forward it to 10 friends',
   price: 99,
+  image: 'elvishchainmail.png',
 },
 {
   name: 'Book of Summoning',
   quantity: 13,
   description: 'For those who need a friend',
   price: 666,
+  image: 'summon.png',
 }
 ]
 

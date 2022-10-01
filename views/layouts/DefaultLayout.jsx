@@ -10,6 +10,11 @@ class DefaultLayout extends React.Component {
                 <link rel="stylesheet" href="/css/styles.css"></link>
               </head>
               <body>
+              <header>
+                <h1>Merlin's Magic Shop</h1>
+               <h2>Since 540 AD</h2>
+              </header>
+              <div id="backdrop"></div>
                   {this.props.children}
               </body>
           </html>

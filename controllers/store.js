@@ -75,7 +75,9 @@ const seedStarterData = (req, res) => {
               if (err) {
                 res.status(400).json(err)
               } else {
+                  console.log(createdItem)
                   res.status(200).redirect('/store')
+                  console.log(createdItem)
               }
           })
       }
