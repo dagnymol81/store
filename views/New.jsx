@@ -5,10 +5,10 @@ class New extends React.Component {
   render() {
     return(
       <DefaultLayout>
-        <section class="show-item">
+        <section className="show-item">
           <div id="text">
         <h2>Add a New Item</h2>
-        <form action="/store" method="POST" class="item-form">
+        <form action="/store" method="POST" className="item-form">
 
         <div>
         <label htmlFor="name">Name:</label>

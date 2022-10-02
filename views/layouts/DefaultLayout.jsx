@@ -18,7 +18,7 @@ class DefaultLayout extends React.Component {
                   {this.props.children}
               <footer>
                 <a href="/store">Back</a>
-                <a href="Credits">Credits</a>
+                <a href="/store/credits">Credits</a>
                 </footer>
               </body>
           </html>

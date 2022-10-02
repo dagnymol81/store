@@ -7,8 +7,8 @@ class Show extends React.Component {
 
     return (
       <DefaultLayout>
-        <section class="show-item">
-          <div class="text">
+        <section className="show-item">
+          <div className="text">
           <h2>{name}</h2>
         <p>
           Quantity: {quantity}
@@ -29,7 +29,7 @@ class Show extends React.Component {
 
           </div>
         
-          <div class="img">
+          <div className="img">
             <img src={`/images/${image}`} />
           </div>
 

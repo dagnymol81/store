@@ -7,10 +7,10 @@ class Edit extends React.Component {
 
         return (
             <DefaultLayout>
-              <section class="show-item">
-                <div class="text">
+              <section className="show-item">
+                <div className="text">
                 <h2>Edit Item: {item.name}</h2>
-                <form class="item-form" action={`/store/${item._id}?_method=PUT`} method="POST">
+                <form className="item-form" action={`/store/${item._id}?_method=PUT`} method="POST">
                     
                     <div>
                     <label htmlFor="name">Name:</label>
@@ -38,7 +38,7 @@ class Edit extends React.Component {
 
                 </form>
                 </div>
-                <div class="img">
+                <div className="img">
                   <img src={`/images/${item.image}`} />
                 </div>
                 </section>
