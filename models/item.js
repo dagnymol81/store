@@ -7,7 +7,7 @@ const itemSchema = new Schema({
   quantity: { type: Number, required: true },
   description: { type: String, required: true },
   price: {type: Number, required: true},
-  image: {type: String, required: false},
+  image: {type: String, default: 'noimage.png'},
 }
 )
 

@@ -26,7 +26,7 @@ class Index extends React.Component {
           <h2>Add an Item</h2>
           <a href="/store/new"><img src="/images/merchant.png" /></a>
           <p>
-          Some People Call This Junk. Me? I Call It Treasure.
+          Some people call this junk. Me? I call it treasure.
           </p>
           </div>
         </section>

@@ -16,6 +16,10 @@ class DefaultLayout extends React.Component {
               </header>
               <div id="backdrop"></div>
                   {this.props.children}
+              <footer>
+                <a href="/store">Back</a>
+                <a href="Credits">Credits</a>
+                </footer>
               </body>
           </html>
       )
