@@ -8,7 +8,7 @@ class New extends React.Component {
         <section className="show-item">
           <div id="text">
         <h2>Add a New Item</h2>
-        <form action="/store" method="POST" className="item-form">
+        <form action="/products" method="POST" className="item-form">
 
         <div>
         <label htmlFor="name">Name:</label>

@@ -11,14 +11,14 @@ class DefaultLayout extends React.Component {
               </head>
               <body>
               <header>
-                <h1>Merlin's Magic Shop</h1>
+                <h1><a href="/products">Merlin's Magic Shop</a></h1>
                <h2>Since 540 AD</h2>
               </header>
               <div id="backdrop"></div>
                   {this.props.children}
               <footer>
-                <a href="/store">Back</a>
-                <a href="/store/credits">Credits</a>
+                <a href="/products">Back</a>
+                <a href="/products/credits">Credits</a>
                 </footer>
               </body>
           </html>

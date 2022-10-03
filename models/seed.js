@@ -22,7 +22,7 @@ const store = [
 },
 {
   name: 'Eleven foot pole',
-  quantity: .42,
+  quantity: 42,
   description: 'When you want to be really sure',
   price: 9.99,
   image: 'pole.png',

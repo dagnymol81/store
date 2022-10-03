@@ -11,8 +11,11 @@ const {
   deleteItem,
   editItem,
   updateItem,
-  seedStarterData, } = require('../controllers/store.js')
+  seedStarterData,
+  showCredits, } = require('../controllers/store.js')
 
+  //credits
+router.get('/credits', showCredits)
 
 //setup "new" route
 router.get('/new', newItem)
@@ -37,5 +40,6 @@ router.get('/:id/edit', editItem)
 
 //setup "put" route
 router.put('/:id', updateItem)
+
 
 module.exports = router

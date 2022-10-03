@@ -10,7 +10,7 @@ class Edit extends React.Component {
               <section className="show-item">
                 <div className="text">
                 <h2>Edit Item: {item.name}</h2>
-                <form className="item-form" action={`/store/${item._id}?_method=PUT`} method="POST">
+                <form className="item-form" action={`/products/${item._id}?_method=PUT`} method="POST">
                     
                     <div>
                     <label htmlFor="name">Name:</label>

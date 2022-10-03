@@ -14,7 +14,7 @@ class Index extends React.Component {
               <div key={item._id} className="item-listing">
                   <h2>{item.name}</h2>
                 <p>
-                <a href={`/store/${item._id}`}><img src={`/images/${item.image}`} /></a>
+                <a href={`/products/${item._id}`}><img src={`/images/${item.image}`} /></a>
                 </p>
                 <p>
                   {item.description}
@@ -24,7 +24,7 @@ class Index extends React.Component {
           })}
           <div className="item-listing">
           <h2>Add an Item</h2>
-          <a href="/store/new"><img src="/images/merchant.png" /></a>
+          <a href="/products/new"><img src="/images/merchant.png" /></a>
           <p>
           Some people call this junk. Me? I call it treasure.
           </p>

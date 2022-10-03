@@ -1,6 +1,11 @@
 const Item = require('../models/item')
 const seed = require('../models/seed')
 
+
+const showCredits = (req, res) => {
+  res.status(200).render('Credits')
+}
+
 const newItem = (req, res) => {
   res.render('New')
 }
@@ -10,7 +15,7 @@ const createItem = (req, res) => {
       if(err) {
         res.status(400).json(err)
       } else {
-        res.status(200).redirect('/store')
+        res.status(200).redirect('/products')
       }
     })
 }
@@ -41,7 +46,7 @@ const deleteItem = (req, res) => {
       res.status(400).json(err)
     } else {
       console.log('deleted ' + deletedItem)
-      res.status(200).redirect('/store')
+      res.status(200).redirect('/products')
     }
   })
 }
@@ -53,7 +58,7 @@ const editItem = (req, res) => {
     } else {
         res.status(200).render('Edit', { item: foundItem })
     }
-})
+  })
 }
 
 const updateItem = (req, res) => {
@@ -61,7 +66,7 @@ Item.findByIdAndUpdate(req.params.id, req.body, (err, foundItem) => {
   if (err) {
     res.status(400).json(err)
   } else {
-    res.status(200).redirect('/store')
+    res.status(200).redirect(`/products/${req.params.id}`)
   }
 })
 }
@@ -76,7 +81,7 @@ const seedStarterData = (req, res) => {
                 res.status(400).json(err)
               } else {
                   console.log(createdItem)
-                  res.status(200).redirect('/store')
+                  res.status(200).redirect('/products')
                   console.log(createdItem)
               }
           })
@@ -93,4 +98,5 @@ module.exports = {
  editItem,
  updateItem,
  seedStarterData,
+ showCredits,
 }

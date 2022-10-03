@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static('public'))
 app.use(express.json())
 app.use(methodOverride("_method"))
-app.use('/store', storeRoutes)
+app.use('/products', storeRoutes)
 
 app.listen(port, () => {
   console.log('listening on port: ' + port)

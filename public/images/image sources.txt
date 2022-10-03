@@ -21,7 +21,7 @@ https://commons.wikimedia.org/wiki/File:Raczka4.jpg
 CC-BY
 
 Pocket Sand
-https://commons.wikimedia.org/wiki/File:HD.6D.091_(10730803356).jpg
+
 CC0
 
 
@@ -36,3 +36,6 @@ https://commons.wikimedia.org/wiki/File:Eilean_Donan_castle_-_95mm.jpg
 
 Merchant
 https://commons.wikimedia.org/wiki/File:Merchants_and_countrymen_-_KONB11-ZAC-488-NIPPON-II-TAB-VIII-KOOPLIEDEN.jpg
+
+Book
+https://upload.wikimedia.org/wikipedia/commons/8/8f/Books-book-pages-read-literature-159866.jpg
