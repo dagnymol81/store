@@ -12,6 +12,7 @@ class Credits extends React.Component {
         <section className="show-item">
           <div>
           <h2>Credits</h2>
+          <p>Merlin's Magic Shop was created by Dagny Mol. Check it out on <a href="https://github.com/dagnymol81/store">GitHub</a></p>
           <p>
             Image Credits:
           </p>
@@ -27,6 +28,7 @@ class Credits extends React.Component {
             <li><a href="https://commons.wikimedia.org/wiki/File:Merchants_and_countrymen_-_KONB11-ZAC-488-NIPPON-II-TAB-VIII-KOOPLIEDEN.jpg">Merchant</a></li>
             <li><a href="https://commons.wikimedia.org/wiki/File:Eilean_Donan_castle_-_95mm.jpg">Castle image by Eilean Donan</a></li>
           </ul>
+          <p>Fonts: <a href="https://fonts.google.com/specimen/Dancing+Script">Dancing Script</a> by  Impallari Type via <a href="https://fonts.google.com/">Google Fonts</a></p>
           </div>
           <div></div>
         </section>
