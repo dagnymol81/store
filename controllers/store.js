@@ -62,7 +62,7 @@ const editItem = (req, res) => {
 }
 
 const updateItem = (req, res) => {
-Item.findByIdAndUpdate(req.params.id, (err, foundItem) => {
+Item.findByIdAndUpdate(req.params.id, req.body, (err, foundItem) => {
   if (err) {
     res.status(400).json(err)
   } else {

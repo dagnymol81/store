@@ -10,7 +10,7 @@ const store = [
   name: 'Ring of Invisibility',
   quantity: 20,
   description: 'Put it on your finger and the ring turns invisible',
-  price: 3.50,
+  price: 3.49,
   image: 'hand.png',
 },
 {

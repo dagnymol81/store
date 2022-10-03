@@ -15,6 +15,23 @@ h2 {
   font-size: 2rem;
 }
 
+a:link, a:visited {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+li {
+  line-height: 150%;
+}
+
+a:link {
+  color:darkblue;
+}
+
+a:visited {
+  color:dimgray;
+}
+
 
 header {
   width: 70vw;
@@ -104,9 +121,10 @@ footer {
   border: 1px solid gray;
 }
 
-button a {
+.button a {
   color: black;
   text-decoration: none;
+  font-weight: 300;
  }
 
 .item-form {
@@ -135,7 +153,7 @@ button a {
   margin-left: 1rem;
 }
 
-h1 a {
+h1 a:link, h1 a:visited {
   color: black;
   text-decoration: none;
 }

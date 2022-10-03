@@ -13,6 +13,7 @@ class Show extends React.Component {
   render() {
 
     let isInStock = false
+    
     const { name, quantity, description, image, price, _id } = this.props.store
 
     if (quantity > 0) {
