@@ -62,7 +62,7 @@ const editItem = (req, res) => {
 }
 
 const updateItem = (req, res) => {
-Item.findByIdAndUpdate(req.params.id, req.body, (err, foundItem) => {
+Item.findByIdAndUpdate(req.params.id, (err, foundItem) => {
   if (err) {
     res.status(400).json(err)
   } else {
@@ -70,6 +70,16 @@ Item.findByIdAndUpdate(req.params.id, req.body, (err, foundItem) => {
   }
 })
 }
+
+const buyItem = (req, res) => {
+  Item.findByIdAndUpdate(req.params.id, { $inc: { quantity: -1 }  }, (err, foundItem) => {
+    if (err) {
+      res.status(400).json(err)
+    } else {
+      res.status(200).redirect(`/products/${req.params.id}`)
+    }
+  })
+  }
 
 const seedStarterData = (req, res) => {
   Item.deleteMany({}, (err, deletedItems) => {
@@ -99,4 +109,5 @@ module.exports = {
  updateItem,
  seedStarterData,
  showCredits,
+ buyItem,
 }

@@ -12,7 +12,8 @@ const {
   editItem,
   updateItem,
   seedStarterData,
-  showCredits, } = require('../controllers/store.js')
+  showCredits,
+  buyItem, } = require('../controllers/store.js')
 
   //credits
 router.get('/credits', showCredits)
@@ -41,5 +42,7 @@ router.get('/:id/edit', editItem)
 //setup "put" route
 router.put('/:id', updateItem)
 
+//buy
+router.put('/:id/buy', buyItem)
 
 module.exports = router
