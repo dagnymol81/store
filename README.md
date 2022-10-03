@@ -1,5 +1,7 @@
 # Merlin's Magic Shop
 
+![Index Page](/public/images/index-page.png)
+
 ## Technology Used
 
 Languages: JavaScript with Node.js and React; CSS3
