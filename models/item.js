@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-//create schema
+//create item schema
 const itemSchema = new Schema({
   name: { type: String, required: true },
   quantity: { type: Number, required: true },
@@ -10,9 +10,7 @@ const itemSchema = new Schema({
   image: {type: String, default: 'noimage.png'},
 }
 )
-
-//create model from schema
+//create model from item schema
 const Item = mongoose.model('Item', itemSchema)
 
-//export our Model
 module.exports = Item

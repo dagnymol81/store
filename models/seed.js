@@ -57,4 +57,6 @@ const store = [
 }
 ]
 
-module.exports = { store }
+const cart = []
+
+module.exports = { store, cart, }

@@ -40,11 +40,10 @@ class Show extends React.Component {
           <a href={`/products/${_id}/edit`}>Edit</a>
       </button>
        
-      {isInStock ? 
-            <form action={`/products/${_id}/buy?_method=PUT`} method="POST">
+
+            <form action={`/products/${_id}/buy?_method=PUT`} method='POST'>
             <button type="submit" value="Buy" className="button">Add to Cart</button>
             </form>
-      : 'Out of Stock'}
 
       
       <form action={`/products/${_id}?_method=DELETE`} method='POST'>

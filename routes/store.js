@@ -13,7 +13,8 @@ const {
   updateItem,
   seedStarterData,
   showCredits,
-  buyItem, } = require('../controllers/store.js')
+  buyItem,
+  newCart } = require('../controllers/store.js')
 
   //credits
 router.get('/credits', showCredits)
@@ -30,6 +31,9 @@ router.get('/', storeIndex)
 //setup seed route
 router.get('/seed', seedStarterData)
 
+//new cart 
+router.get('/new-cart', newCart)
+
 //show route
 router.get('/:id', showItem)
 
@@ -39,10 +43,12 @@ router.delete('/:id', deleteItem)
 //setup "edit" route
 router.get('/:id/edit', editItem)
 
+//buy
+router.put('/:id/buy', buyItem)
+
 //setup "put" route
 router.put('/:id', updateItem)
 
-//buy
-router.put('/:id/buy', buyItem)
+
 
 module.exports = router
