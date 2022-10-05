@@ -18,6 +18,10 @@ app.use(express.json())
 app.use(methodOverride("_method"))
 app.use('/products', storeRoutes)
 
+app.get('/',(req,res) => {
+  res.redirect("/products")
+})
+
 app.listen(port, () => {
   console.log('listening on port: ' + port)
 })
