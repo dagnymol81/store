@@ -178,3 +178,13 @@ h1 a:link, h1 a:visited {
   margin-top: 0;
   margin-bottom: 1em;
 }
+
+#shopping-cart-list li {
+  border: 1px solid gray;
+  list-style-type: none;
+  padding: 1rem;
+  margin-left: -2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  opacity: .8;
+}

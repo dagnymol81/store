@@ -5,23 +5,20 @@ class Cart extends React.Component {
     render() {
 
       let { cart } = this.props
- 
-      console.log(cart[0].cartItems)
-     
 
-        return (
+      return (
             <DefaultLayout>
               <section className="show-item">
                 <div className="text">
                   <h2>Shopping Cart</h2>
                   <ul id="shopping-cart-list">
-                  {cart[0].cartItems.map((item) => {
+                  {cart[0] ? cart[0].cartItems.map((item) => {
                     return (
                       <li key={item._id}>  
-                        Item: {item.product} Price: {item.price} Quantity: {item.quantity} 
+                        {item.product} <strong>Price:</strong> {item.price} <strong>Quantity:</strong> {item.quantity} <strong>Total:</strong> {item.price * item.quantity}
                       </li>
                         )
-                    })}
+                    }) : <p>There are no items in your cart!</p>}
                     </ul>
                 </div>
                 <div className="img">

@@ -56,9 +56,11 @@ const buyItem = (req, res) => {
             Cart.findByIdAndUpdate(foundCart._id, { $push: { cartItems: newItem } }, {new: true}, (err, foundItem) => {
               if (err) {
                 res.status(400).json(err)
-              } 
+              } else {
+                res.status(200).redirect('/products/cart')
+              }
             })
-            res.status(200).redirect('/products/cart')
+            
           }
           }
 
