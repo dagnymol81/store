@@ -33,7 +33,7 @@ const storeIndex = (req, res) => {
 
 
 const buyItem = (req, res) => {
-  Item.findById(req.params.id, (err, foundItem) => {
+  Item.findByIdAndUpdate(req.params.id, {$inc: { quantity: -1 } }, (err, foundItem) => {
     if (err) {
         res.status(400).json(err)
     } else {
