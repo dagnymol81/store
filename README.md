@@ -5,16 +5,17 @@
 ## Technology Used
 
 Languages: JavaScript with Node.js and React; CSS3
-
 Database: MongoDB 
 
 ## To Install
  * You will need the following Node.js modules: express, request, express-react-views, react, react-dom, mongoose, mongoose dotenv, method-override
  * You will need to create an .env file with your port number and a connection string for MongoDB
+ 
+## To Use
+* Merlin's Magic Shop is deployed as a Cyclic app at: https://sleepy-stole-calf.cyclic.app/products
 
 ## Not Yet Implemented
  * Image Upload
- * Shopping Cart
  * User Authentication
  
  ## License
@@ -40,6 +41,8 @@ Database: MongoDB
 ![New Item](/public/images/new-item.png)
 
 ![Show Item](/public/images/show-item.png)
+
+![Shopping Cart](/public/images/cart.png)
 
 ### Image Credits
  * <a href="https://www.si.edu/object/sand:nmnheducation_11038389">Pocket Sand</a>
