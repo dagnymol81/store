@@ -47,19 +47,18 @@ const buyItem = (req, res) => {
           let newItem =  { product: itemName, price: price } 
 
           if (foundCart) {
-            let itemExists = foundCart.cartItems.find(element => element.product == itemName)
-            console.log(itemExists)
-            if (itemExists) {
-
-              res.send('item exists')
-              
-          } else {
+            let itemExists = foundCart.cartItems.findIndex(element => element.product == itemName)
+            if (itemExists != -1) {
+              foundCart.cartItems[itemExists].quantity += 1;
+              foundCart.save()
+              res.status(200).redirect('/products/cart')
+            } else {
             Cart.findByIdAndUpdate(foundCart._id, { $push: { cartItems: newItem } }, {new: true}, (err, foundItem) => {
               if (err) {
                 res.status(400).json(err)
               } 
             })
-            res.status(200).redirect('/products/')
+            res.status(200).redirect('/products/cart')
           }
           }
 
@@ -68,7 +67,7 @@ const buyItem = (req, res) => {
               if (err) {
                 res.status(400).json(err)
               } else {
-                res.status(200).redirect('/products')
+                res.status(200).redirect('/products/cart')
               }
             })
           }
