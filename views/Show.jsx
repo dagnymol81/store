@@ -41,11 +41,10 @@ class Show extends React.Component {
       </button>
        
       {isInStock ? 
-            <form action={`/products/${_id}/buy?_method=PUT`} method="POST">
+            <form action={`/products/${_id}/buy?_method=PUT`} method='POST'>
             <button type="submit" value="Buy" className="button">Add to Cart</button>
             </form>
-      : 'Out of Stock'}
-
+      : <p id="out-of-stock">Out of Stock</p> }
       
       <form action={`/products/${_id}?_method=DELETE`} method='POST'>
       <button type="submit" value="Delete" className="button">Delete</button>

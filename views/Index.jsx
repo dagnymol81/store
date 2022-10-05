@@ -5,9 +5,11 @@ class Index extends React.Component {
   render() {
 
     const { store } = this.props
-  
+
+    
     return (
       <DefaultLayout> 
+      <div id="cart"><div>Check out our specials on Barbarian armor: 90% off!</div> <a href="/products/cart">Shopping Cart</a></div>
         <section id="store-index">
           {store.map((item) => {
             return (

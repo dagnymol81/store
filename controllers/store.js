@@ -1,5 +1,6 @@
 const Item = require('../models/item')
 const seed = require('../models/seed')
+const Cart = require('../models/cart')
 
 
 const showCredits = (req, res) => {
@@ -26,6 +27,70 @@ const storeIndex = (req, res) => {
       res.status(400).json(err)
     } else {
       res.status(200).render('Index', { store: foundItem })
+    }
+  })
+}
+
+
+const buyItem = (req, res) => {
+  Item.findByIdAndUpdate(req.params.id, {$inc: { quantity: -1 } }, (err, foundItem) => {
+    if (err) {
+        res.status(400).json(err)
+    } else {
+      Cart.findOne({}, (err, foundCart) => {
+        if (err) {
+          res.status(400).json(err)
+        } else {
+
+          let itemName = foundItem.name
+          let price = foundItem.price
+          let newItem =  { product: itemName, price: price } 
+
+          if (foundCart) {
+            let itemExists = foundCart.cartItems.findIndex(element => element.product == itemName)
+            if (itemExists != -1) {
+              foundCart.cartItems[itemExists].quantity += 1;
+              foundCart.save()
+              res.status(200).redirect('/products/cart')
+            } else {
+            Cart.findByIdAndUpdate(foundCart._id, { $push: { cartItems: newItem } }, {new: true}, (err, foundItem) => {
+              if (err) {
+                res.status(400).json(err)
+              } else {
+                res.status(200).redirect('/products/cart')
+              }
+            })
+            
+          }
+          }
+
+          else {
+            Cart.create({ cartItems: [newItem] }, (err, newItem) => {
+              if (err) {
+                res.status(400).json(err)
+              } else {
+                res.status(200).redirect('/products/cart')
+              }
+            })
+          }
+        }
+      })
+    }
+  })
+}
+
+
+
+
+
+
+    
+const showCart = (req, res) => {
+  Cart.find({}, (err, foundCart) => {
+    if(err) {
+      res.status(400).json(err)
+    } else {
+      res.status(200).render('Cart', {cart: foundCart})
     }
   })
 }
@@ -71,16 +136,6 @@ Item.findByIdAndUpdate(req.params.id, req.body, (err, foundItem) => {
 })
 }
 
-const buyItem = (req, res) => {
-  Item.findByIdAndUpdate(req.params.id, { $inc: { quantity: -1 }  }, (err, foundItem) => {
-    if (err) {
-      res.status(400).json(err)
-    } else {
-      res.status(200).redirect(`/products/${req.params.id}`)
-    }
-  })
-  }
-
 const seedStarterData = (req, res) => {
   Item.deleteMany({}, (err, deletedItems) => {
       if (err) {
@@ -99,6 +154,23 @@ const seedStarterData = (req, res) => {
   })
 }
 
+const newCart = (req, res) => {
+  Cart.deleteMany({}, (err, deletedCart) => {
+    if (err) {
+      res.status(400).json(err)
+    } else {
+        Cart.create(seed.cart, (err, newCart) => {
+            if (err) {
+              res.status(400).json(err)
+            } else {
+                console.log(newCart)
+                res.status(200).redirect('/products')
+            }
+        })
+    }
+})
+}
+
 module.exports = {
  newItem,
  createItem,
@@ -110,4 +182,6 @@ module.exports = {
  seedStarterData,
  showCredits,
  buyItem,
+ newCart,
+ showCart,
 }
