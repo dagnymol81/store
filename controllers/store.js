@@ -47,20 +47,19 @@ const buyItem = (req, res) => {
           let newItem =  { product: itemName, price: price } 
 
           if (foundCart) {
-            Cart.findByIdAndUpdate(foundCart._id, { $push: { cartItems: newItem } }, (err, foundItem) => {
-              if(err) {
+            Cart.findByIdAndUpdate(foundCart._id, { $push: { cartItems: newItem } }, {new: true}, (err, foundItem) => {
+              if (err) {
                 res.status(400).json(err)
-              } else {
-                res.status(200).render('Cart', { item: foundItem })
-              }
-              
-            }) 
-          } else {
+              } 
+            })
+            res.status(200).redirect('/products/')
+          }
+          else {
             Cart.create({ cartItems: [newItem] }, (err, newItem) => {
               if (err) {
                 res.status(400).json(err)
               } else {
-                res.status(200).render('Cart', { item: foundItem })
+                res.status(200).redirect('/products')
               }
             })
           }
@@ -70,7 +69,15 @@ const buyItem = (req, res) => {
   })
 }
     
-
+const showCart = (req, res) => {
+  Cart.find({}, (err, foundCart) => {
+    if(err) {
+      res.status(400).json(err)
+    } else {
+      res.status(200).render('Cart', {cart: foundCart})
+    }
+  })
+}
 
 const showItem = (req, res) => {
   Item.findById(req.params.id, (err, foundItem) => {
@@ -160,4 +167,5 @@ module.exports = {
  showCredits,
  buyItem,
  newCart,
+ showCart,
 }
