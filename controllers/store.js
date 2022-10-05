@@ -41,32 +41,26 @@ const buyItem = (req, res) => {
         if (err) {
           res.status(400).json(err)
         } else {
+
+          let itemName = foundItem.name
+          let price = foundItem.price
+          let newItem =  { product: itemName, price: price } 
+
           if (foundCart) {
-
-            let itemName = foundItem.name
-            let price = foundItem.price
-            let newItem =  { product: itemName, price: price } 
-
             Cart.findByIdAndUpdate(foundCart._id, { $push: { cartItems: newItem } }, (err, foundItem) => {
               if(err) {
                 res.status(400).json(err)
               } else {
-                res.status(200).redirect('/products')
+                res.status(200).render('Cart', { item: foundItem })
               }
               
             }) 
           } else {
-            let itemName = foundItem.name
-            let price = foundItem.price
-            let newItem =  { product: itemName, price: price } 
-
-            console.log(newItem)
-
             Cart.create({ cartItems: [newItem] }, (err, newItem) => {
               if (err) {
                 res.status(400).json(err)
               } else {
-                res.status(200).redirect('/products')
+                res.status(200).render('Cart', { item: foundItem })
               }
             })
           }
