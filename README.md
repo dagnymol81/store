@@ -7,12 +7,14 @@
 Languages: JavaScript with Node.js and React; CSS3
 Database: MongoDB 
 
+## To Use
+* Merlin's Magic Shop is deployed as a Cyclic app at: https://merlin-magic-shop.cyclic.app/
+
+
 ## To Install
  * You will need the following Node.js modules: express, request, express-react-views, react, react-dom, mongoose, mongoose dotenv, method-override
  * You will need to create an .env file with your port number and a connection string for MongoDB
  
-## To Use
-* Merlin's Magic Shop is deployed as a Cyclic app at: https://sleepy-stole-calf.cyclic.app/
 
 ## Not Yet Implemented
  * Image Upload
