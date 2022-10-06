@@ -20,6 +20,9 @@ class Cart extends React.Component {
                         )
                     }) : <p>There are no items in your cart!</p>}
                     </ul>
+
+                    {cart[0] ? <button><a href="/products/delete-cart">Delete Cart</a></button> : ''}
+
                 </div>
                 <div className="img">
                   {/* <img src={`/images/${item.image}`} /> */}

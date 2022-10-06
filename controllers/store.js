@@ -33,26 +33,25 @@ const storeIndex = (req, res) => {
 
 
 const buyItem = (req, res) => {
-  Item.findByIdAndUpdate(req.params.id, {$inc: { quantity: -1 } }, (err, foundItem) => {
+  Item.findByIdAndUpdate(req.params.id, {$inc: { quantity: -1 } }, (err, foundItem) => { //decrement item
     if (err) {
         res.status(400).json(err)
     } else {
-      Cart.findOne({}, (err, foundCart) => {
+      Cart.findOne({}, (err, foundCart) => { //find a cart
         if (err) {
           res.status(400).json(err)
         } else {
-
           let itemName = foundItem.name
           let price = foundItem.price
-          let newItem =  { product: itemName, price: price } 
+          let newItem =  { product: itemName, price: price }  //create cart item
 
           if (foundCart) {
             let itemExists = foundCart.cartItems.findIndex(element => element.product == itemName)
-            if (itemExists != -1) {
+            if (itemExists != -1) { //if we found item in the cartItems array, increment quantity in cart
               foundCart.cartItems[itemExists].quantity += 1;
               foundCart.save()
               res.status(200).redirect('/products/cart')
-            } else {
+            } else { //otherwise push item to array
             Cart.findByIdAndUpdate(foundCart._id, { $push: { cartItems: newItem } }, {new: true}, (err, foundItem) => {
               if (err) {
                 res.status(400).json(err)
@@ -63,8 +62,7 @@ const buyItem = (req, res) => {
             
           }
           }
-
-          else {
+          else { //if there's no cart, create one
             Cart.create({ cartItems: [newItem] }, (err, newItem) => {
               if (err) {
                 res.status(400).json(err)
@@ -154,21 +152,14 @@ const seedStarterData = (req, res) => {
   })
 }
 
-const newCart = (req, res) => {
+const deleteCart = (req, res) => {
   Cart.deleteMany({}, (err, deletedCart) => {
     if (err) {
       res.status(400).json(err)
     } else {
-        Cart.create(seed.cart, (err, newCart) => {
-            if (err) {
-              res.status(400).json(err)
-            } else {
-                console.log(newCart)
-                res.status(200).redirect('/products')
-            }
-        })
-    }
-})
+        res.status(200).redirect('/products')
+      }
+  })
 }
 
 module.exports = {
@@ -182,6 +173,6 @@ module.exports = {
  seedStarterData,
  showCredits,
  buyItem,
- newCart,
+ deleteCart,
  showCart,
 }

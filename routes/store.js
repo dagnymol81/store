@@ -14,7 +14,7 @@ const {
   seedStarterData,
   showCredits,
   buyItem,
-  newCart,
+  deleteCart,
   showCart } = require('../controllers/store.js')
 
   //credits
@@ -33,7 +33,7 @@ router.get('/', storeIndex)
 router.get('/seed', seedStarterData)
 
 //new cart 
-router.get('/new-cart', newCart)
+router.get('/delete-cart', deleteCart)
 
 //show cart 
 router.get('/cart', showCart)
